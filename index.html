@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&family=Literata:opsz,wght@7..72,400;7..72,600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <header class="primary-header flex">
+      <div class="container flex">
+        <div class="logo">This Fancy Beast</div>
+
+        <button
+          class="mobile-nav-toggle"
+          aria-controls="primary-navigation"
+          aria-expanded="false"
+        >
+          <span class="sr-only">Menu</span>
+        </button>
+
+        <nav>
+          <ul
+            role="list"
+            id="primary-navigation"
+            data-visible="false"
+            class="primary-navigation flex"
+          >
+            <li>
+              <a href="#"><span aria-hidden="true">00</span>home</a>
+            </li>
+            <li>
+              <a href="#"><span aria-hidden="true">01</span>about</a>
+            </li>
+            <li>
+              <a href="#"><span aria-hidden="true">02</span>gallery</a>
+            </li>
+            <li>
+              <a href="#"><span aria-hidden="true">03</span>shop</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section class="hero">
+        <h1></h1>
+        <p></p>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="uneven-columns">
+            <div>
+              <h1 class="fs-primary-heading">This Fancy Beast</h1>
+              <p class="ff-heading fs-body">
+                Fancy Art prints, made with love in Brooklyn
+              </p>
+              <div class="flex">
+                <button class="button primary">Gallery</button>
+                <button class="button secondary">Contact</button>
+              </div>
+            </div>
+            <div>
+              <img
+                src="img/acc/hero-img-min.png"
+                alt="decorative illustration detail"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="even-columns">
+            <div>
+              <h2 class="fs-secondary-heading">About</h2>
+              <p class="ff-body fs-body">
+                This Fancy Beast this that and the other, here is where I say
+                something inspiring about the idea and the beasts. Marvelous
+                menagerie.
+              </p>
+              <button class="button primary">Contact</button>
+            </div>
+            <div>
+              <img
+                src="img/acc/heart-min.png"
+                alt="decorative pen and ink drawing of an anatomical heart"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer></footer>
+    <script src="scripts.js"></script>
+  </body>
+</html>
