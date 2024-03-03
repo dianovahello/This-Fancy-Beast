@@ -1,10 +1,13 @@
 /* colors used 
 
-rose-light: #E7E0DE;  hsl(13, 16%, 89%);
-rose-dark: #D5CECC;
-blue-dark: #2C2C35; 
-brown-dark: #352E2C;
-ochre-dark: #AA996F;
+  --clr-blue-dark:hsla(240, 9.3%, 19%, 1);
+  --clr-rose-light: hsla(13, 15.8%, 88.8%, 1);
+  --clr-ochre-dark: hsla(43, 25.8%, 55.1%, 1);
+  --clr-rose-dark: hsla(13, 9.7%, 81.8%, 1);
+  --clr-brown-dark: hsla(13, 9.3%, 19%, 1);
+  --ochre-15: hsla(43, 25.8%, 55.1%, 0.15);
+
+  --grey-light:  hsla(0,0%,0%,0.1);
 
 */
 
@@ -18,11 +21,13 @@ Custom properties
   --clr-rose-light: hsl(13, 16%, 89%);
   --clr-rose-dark: hsl(13, 10%, 82%);
 
-  --clr-ochre-dark: hsl(43, 26%, 55%); 
+  --clr-ochre-dark: hsl(43, 26%, 55%);
+  --ochre-15: hsla(43, 25.8%, 55.1%, 0.15);
 
   --clr-blue-dark: hsl(240, 9%, 19%);
   --clr-brown-dark: hsl(13, 9%, 19%);
 
+  --grey-light: hsla(0, 0%, 0%, 0.1);
 
   --ff-primary: "Literata", serif;
   --ff-secondary: "Inconsolata", monospace;
@@ -48,21 +53,24 @@ Custom properties
   --fs-body: var(--fs-400);
   --fs-small: var(--fs-300);
 
+  --spacer-400: 1rem;
+  --spacer-500: 2rem;
+  --spacer-600: 4rem;
+  --spacer-700: 6rem;
+  --spacer-800: 8rem;
+  --spacer-900: 10rem;
 }
 
-@media(min-width: 50em) {
-:root {
-
-  --fs-300: 1rem;
-  --fs-400: 1.125rem;
-  --fs-500: 1.618rem;
-  --fs-600: 2.618rem;
-  --fs-700: 4.236rem;
-  --fs-xl: 6.854rem;
+@media (min-width: 50em) {
+  :root {
+    --fs-300: 1rem;
+    --fs-400: 1.125rem;
+    --fs-500: 1.618rem;
+    --fs-600: 2.618rem;
+    --fs-700: 4.236rem;
+    --fs-xl: 6.854rem;
+  }
 }
-}
-
-
 
 /*
 ---------------------------------------------------------------------------------------------------------------------------------- 
@@ -73,9 +81,6 @@ CSS Reset https://piccalil.li/blog/a-more-modern-css-reset/
 -----------------------------------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------------------------------
 */
-
-
-
 
 /* Box sizing rules */
 *,
@@ -92,14 +97,22 @@ html {
 }
 
 /* Remove default margin in favour of better control in authored CSS */
-body, h1, h2, h3, h4, p,
-figure, blockquote, dl, dd {
-  margin-block-end: 0;
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role='list'],
-ol[role='list'] {
+ul[role="list"],
+ol[role="list"] {
   list-style: none;
 }
 
@@ -110,14 +123,21 @@ body {
 }
 
 /* Set shorter line heights on headings and interactive elements */
-h1, h2, h3, h4,
-button, input, label {
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
   line-height: 1.1;
 }
 
 /* Balance text wrapping on headings */
-h1, h2,
-h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   text-wrap: balance;
 }
 
@@ -135,8 +155,10 @@ picture {
 }
 
 /* Inherit fonts for inputs and buttons */
-input, button,
-textarea, select {
+input,
+button,
+textarea,
+select {
   font: inherit;
 }
 
@@ -180,8 +202,6 @@ Utility classes
   color: var(--clr-brown-dark);
 }
 
-
-
 .bg-rose-light {
   background-color: var(--clr-rose-light);
 }
@@ -202,6 +222,14 @@ Utility classes
   background-color: var(--clr-brown-dark);
 }
 
+.bg-rose-paper {
+  background-image: url(../img/bg/txtr-ppr-200px.png);
+  background-size: 10%;
+}
+
+.bg-stripe {
+    background-image: url(../assets/stripe.svg);
+}
 
 .ff-heading {
   font-family: var(--ff-heading);
@@ -210,20 +238,6 @@ Utility classes
 .ff-body {
   font-family: var(--ff-body);
 }
-
-
-.fw-regular {
-  font-weight: var(--fw-regular);
-}
-
-.fw-medium {
-  font-weight: var(--fw-medium);
-}
-
-.fw-bold {
-  font-weight: var(--fw-bold);
-}
-
 
 .fs-xl-heading {
   font-size: var(--fs-xl-heading);
@@ -249,10 +263,60 @@ Utility classes
   font-size: var(--fs-300);
 }
 
+.fw-regular {
+  font-weight: var(--fw-regular);
+}
+
+.fw-medium {
+  font-weight: var(--fw-medium);
+}
+
+.fw-bold {
+  font-weight: var(--fw-bold);
+}
+
+
+
+.margin-top-400 {
+  margin-top: var(--spacer-400);
+}
+
+.margin-block-400 {
+  margin-block: var(--spacer-400);
+}
+
+.margin-inline-400 {
+  margin-inline: var(--spacer-400);
+}
+
+
+
+.padding-top-400 {
+  padding-top: var(--spacer-400);
+}
+
+.padding-block-400 {
+  padding-block: var(--spacer-400);
+}
+
+.padding-block-700 {
+  padding-block: var(--spacer-700);
+}
+
+.padding-inline-400 {
+  padding-inline: var(--spacer-400);
+}
+
+
 
 .flex {
   display: flex;
   gap: var(--gap, 2rem);
+}
+
+.flex-container {
+  display: flex;
+  gap: var(--gap, 1rem);
 }
 
 /*
@@ -266,7 +330,6 @@ START
 */
 
 body {
-  background-color: var(--clr-rose-light);
   color: var(--clr-blue-dark);
   font-family: var(--ff-body);
   font-size: var(--fs-400);
@@ -285,12 +348,36 @@ body {
   position: absolute;
 }
 
-h1,
-h2,
-h3,
-h4 {
-  font-family: var(--ff-heading);
+.img-acc {
+  max-width: 15rem;
+  margin-inline: auto;
+  margin-block: auto;
 }
+
+/*
+-----------------------------------------------------------------
+wrapper
+-----------------------------------------------------------------
+*/
+
+.wrapper--wide {
+  width: 100%;
+  max-width: 75em;
+  margin-inline: auto;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 60em;
+  padding-inline: var(--spacer-400);
+  margin-inline: auto;
+}
+
+/*
+-----------------------------------------------------------------
+link and button
+-----------------------------------------------------------------
+*/
 
 a {
   color: var(--clr-blue-dark);
@@ -302,19 +389,38 @@ a {
 primary header 
 -----------------------------------------------------------------
 */
+
 .primary-header .container {
   width: 100%;
   justify-content: space-between;
 }
 
 .logo {
-  margin: 2rem;
-  font-family: var(--ff-heading);
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-mark {
+  margin: 1rem 0.5rem 1rem 1rem;
+
+  background-image: url(../assets/logo-light.svg);
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  width: 2rem;
+  aspect-ratio: 1;
 }
 
 .primary-header {
   align-items: center;
   justify-content: space-between;
+  max-width: 75em;
+  margin-inline: auto;
+
+  border-bottom: 1px solid var(--grey-light);
 }
 
 .mobile-nav-toggle {
@@ -335,13 +441,10 @@ primary header
 }
 
 .primary-navigation a {
-  text-transform: uppercase;
+  text-transform: capitalize;
   text-decoration: none;
-}
-
-.primary-navigation a [aria-hidden="true"] {
   font-weight: var(--fw-bold);
-  margin-inline-end: 0.5em;
+  letter-spacing: 1px;
 }
 
 @media (max-width: 35em) {
@@ -379,7 +482,7 @@ primary header
 
     border: 0;
 
-    top: 2rem;
+    top: 1rem;
     right: 1rem;
   }
 
@@ -388,22 +491,75 @@ primary header
   }
 }
 
-@media (min-width: 35em) and (max-width: 55em) {
-.primary-navigation a > [aria-hidden="true"] {
-  display: none;
-}
-}
-
 @media (min-width: 35em) {
   .primary-navigation {
-
     --gap: clamp(1.5rem, 5vw, 3rem);
 
-    padding-block: 2rem;
+    padding-block: 1rem;
     padding-inline: clamp(3rem, 10vw, 10rem);
 
+    backdrop-filter: none;
+    background-color: transparent;
   }
-
-
 }
 
+/*
+-----------------------------------------------------------------
+grid
+-----------------------------------------------------------------
+*/
+
+.grid {
+  --column-count: 1;
+  display: grid;
+  gap: var(--spacer-400);
+
+  grid-template-columns: repeat(var(--column-count), 1fr);
+}
+
+.grid[data-columns="2"] {
+  --column-count: 1;
+}
+
+.grid[data-columns="3"] {
+  --column-count: 1;
+}
+
+@media (min-width: 40em) {
+  .grid[data-columns="2"] {
+    --column-count: 2;
+    grid-template-columns: 2fr 1fr;
+  }
+
+  .grid[data-columns="3"] {
+    --column-count: 2;
+  }
+}
+
+@media (min-width: 50em) {
+
+  .grid[data-columns="3"] {
+    --column-count: 3;
+  }
+}
+
+/*
+-----------------------------------------------------------------
+card
+-----------------------------------------------------------------
+*/
+
+.card {
+  max-width: 40rem;
+}
+
+.card-contents {
+  padding: var(--spacer-400);
+  background-color: #f4f4f5;
+  color: var(--clr-blue-dark);
+  text-align: center;
+}
+
+.card-contents p{
+  margin-top: var(--spacer-400);
+}
